@@ -1,103 +1,94 @@
 export default function AboutSection() {
   const values = [
-    { title: "Impact First", desc: "Every product must create tangible value for real people and businesses." },
-    { title: "Excellence", desc: "Engineering maturity meets innovation — no shortcuts, no compromise on quality." },
-    { title: "Leadership", desc: "Guide teams and communities with empathy, clarity, and accountability." },
-    { title: "Continuous Learning", desc: "Rapid learning velocity — stay ahead of the curve in AI and systems engineering." },
-    { title: "Integrity", desc: "Professional ethics, reliability, and engineering discipline in every decision." }
+    { icon: "⚡", title: "Velocity", desc: "Ship fast. Iterate daily. A working product beats a perfect plan." },
+    { icon: "🧠", title: "Intelligence", desc: "AI isn't the future — it's the present. We embed it in everything we build." },
+    { icon: "🌍", title: "Impact", desc: "Every product we launch has a mission beyond revenue." },
+    { icon: "🤝", title: "Integrity", desc: "Transparent decisions. No shortcuts. Long-term trust over short-term gain." },
+    { icon: "🔥", title: "Resilience", desc: "Started from nothing. Built everything. Failure is part of the blueprint." },
+    { icon: "🌱", title: "Growth", desc: "I grow my team, my companies, and myself simultaneously." },
   ]
 
   return (
-    <section id="about" className="visionary-section bg-primary" style={{ padding: '80px 0', color: 'var(--color-black)' }}>
+    <section id="about" style={{ padding: '100px 0', background: '#0a0a0a' }}>
       <div className="container">
-        
-        <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '38px', textTransform: 'uppercase', marginBottom: '20px', letterSpacing: '1px' }}>
-          Engineering Maturity Meets Innovation
-        </h2>
-        
-        <p style={{ fontSize: '20px', maxWidth: '900px', margin: '0 auto 40px auto', lineHeight: '1.6', fontWeight: 500 }}>
-          As a Computer Engineering graduate, I've built a solid foundation in computer science principles. My journey is defined by a relentless drive to solve complex problems using intelligent systems, enterprise AI solutions at VDart, and developer community leadership through Google programs.
-        </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', margin: '40px 0', textAlign: 'left' }}>
-          
-          {/* Mission & Vision Column */}
-          <div style={{ background: 'rgba(0,0,0,0.05)', padding: '30px', borderRadius: '8px', border: '1px solid rgba(0,0,0,0.1)' }}>
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', textTransform: 'uppercase', marginBottom: '15px' }}>
-              Mission
+        {/* Section Header */}
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <span className="section-badge">FOUNDER STORY</span>
+          <h2 className="section-heading">Who Is <span style={{ color: 'var(--color-primary)' }}>Mr K</span>?</h2>
+        </div>
+
+        {/* Story Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '40px',
+          marginBottom: '80px',
+          alignItems: 'start'
+        }}>
+          {/* Story Text */}
+          <div style={{ gridColumn: 'span 1' }}>
+            <h3 style={{ fontSize: '22px', fontWeight: '700', color: '#fff', marginBottom: '20px', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '1px' }}>
+              The Journey
             </h3>
-            <p style={{ fontSize: '16px', lineHeight: '1.6', marginBottom: '25px', color: '#111' }}>
-              To build AI-powered companies and ecosystems that solve real-world problems with elegance, scalability, and measurable impact.
+            <p style={{ color: '#888', lineHeight: '1.85', marginBottom: '18px', fontSize: '15px' }}>
+              I'm <strong style={{ color: '#ccc' }}>Karuppasamy M</strong> — known as <strong style={{ color: 'var(--color-primary)' }}>Mr K</strong>. I grew up with a singular obsession: build things that matter at scale. From my earliest days in tech, I saw gaps where AI could completely transform industries.
             </p>
-            
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', textTransform: 'uppercase', marginBottom: '15px' }}>
-              Vision
-            </h3>
-            <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#111' }}>
-              A world where intelligent systems empower every founder, student, and engineer to build products that matter — led by the Mr K AI Ecosystem.
+            <p style={{ color: '#888', lineHeight: '1.85', marginBottom: '18px', fontSize: '15px' }}>
+              I founded the <strong style={{ color: '#ccc' }}>Mr K AI Ecosystem</strong> with a simple thesis — the best companies are built on intelligence, speed, and purpose. We're not just shipping software; we're engineering competitive advantages for founders, enterprises, and communities.
+            </p>
+            <p style={{ color: '#888', lineHeight: '1.85', fontSize: '15px' }}>
+              As a mentor, I've helped 50+ developers accelerate their careers. As a speaker, I've shared the founder's playbook with 200+ students and entrepreneurs across India.
             </p>
           </div>
 
-          {/* Core Values Column */}
-          <div style={{ background: 'rgba(0,0,0,0.05)', padding: '30px', borderRadius: '8px', border: '1px solid rgba(0,0,0,0.1)' }}>
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '22px', textTransform: 'uppercase', marginBottom: '15px' }}>
-              Core Values
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              {values.map((v, i) => (
-                <div key={i}>
-                  <strong style={{ fontSize: '16px', color: '#000' }}>• {v.title}:</strong>
-                  <span style={{ fontSize: '14px', color: '#222', marginLeft: '5px', lineHeight: '1.4' }}>{v.desc}</span>
-                </div>
-              ))}
+          {/* Vision Box */}
+          <div style={{
+            background: 'rgba(255, 209, 0, 0.04)',
+            border: '1px solid rgba(255, 209, 0, 0.15)',
+            borderRadius: '12px',
+            padding: '36px',
+          }}>
+            <h3 style={{ fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--color-primary)', marginBottom: '16px', fontWeight: 700 }}>Mission Statement</h3>
+            <p style={{ fontSize: '22px', lineHeight: '1.55', color: '#fff', fontWeight: '500', marginBottom: '28px', fontFamily: 'var(--font-heading)' }}>
+              "To build AI-powered companies and ecosystems that solve real-world problems with elegance, scalability, and measurable impact."
+            </p>
+            <div style={{ borderTop: '1px solid #222', paddingTop: '24px' }}>
+              <h4 style={{ fontSize: '12px', letterSpacing: '2px', textTransform: 'uppercase', color: '#555', marginBottom: '14px' }}>Leadership Philosophy</h4>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {[
+                  "Lead from the trenches — I code, I sell, I mentor",
+                  "Build systems that outlast individuals",
+                  "Hire for curiosity, train for excellence",
+                  "Ship before you're ready — then improve daily"
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '10px' }}>
+                    <span style={{ color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px' }}>▸</span>
+                    <span style={{ color: '#888', fontSize: '14px', lineHeight: 1.6 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-
         </div>
 
-        {/* Highlights & Resume */}
-        <div style={{ marginTop: '40px', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '40px' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px', marginBottom: '30px', fontSize: '15px', fontWeight: 'bold' }}>
-            <span style={{ background: '#000', color: 'var(--color-primary)', padding: '8px 18px', borderRadius: '4px' }}>
-              🏫 SIT Trichy
-            </span>
-            <span style={{ background: '#000', color: 'var(--color-primary)', padding: '8px 18px', borderRadius: '4px' }}>
-              🚀 VDart & Novi Tech AI Experience
-            </span>
-            <span style={{ background: '#000', color: 'var(--color-primary)', padding: '8px 18px', borderRadius: '4px' }}>
-              🌐 Google Campus Leader
-            </span>
-          </div>
-
-          <a 
-            href="/certificates/KARUPPASAMY M.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn-primary" 
-            style={{ 
-              backgroundColor: '#000', 
-              color: 'var(--color-primary)', 
-              border: '2px solid #000', 
-              padding: '14px 32px',
-              textTransform: 'uppercase',
-              letterSpacing: '1px',
-              fontSize: '15px',
-              display: 'inline-block',
-              textDecoration: 'none'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#000';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.backgroundColor = '#000';
-              e.currentTarget.style.color = 'var(--color-primary)';
-            }}
-          >
-            Download Resume &rarr;
-          </a>
+        {/* Values Grid */}
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', textTransform: 'uppercase', letterSpacing: '2px', color: '#fff' }}>Core Values</h3>
         </div>
-
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '20px'
+        }}>
+          {values.map((val, i) => (
+            <div key={i} className="card" style={{ textAlign: 'center', padding: '32px 24px' }}>
+              <div style={{ fontSize: '36px', marginBottom: '16px' }}>{val.icon}</div>
+              <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', textTransform: 'uppercase', letterSpacing: '1.5px', color: '#fff', marginBottom: '10px' }}>{val.title}</h4>
+              <p style={{ color: '#666', fontSize: '13px', lineHeight: 1.7 }}>{val.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

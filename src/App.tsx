@@ -3,8 +3,11 @@ import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import JourneySection from './components/JourneySection'
 import ProjectsSection from './components/ProjectsSection'
-import SkillsSection from './components/SkillsSection'
-import MentorshipSpeakingSection from './components/MentorshipSpeakingSection'
+import MediaPressSection from './components/MediaPressSection'
+import AchievementsSection from './components/AchievementsSection'
+import SpeakingSection from './components/SpeakingSection'
+import MentorshipSection from './components/MentorshipSection'
+import TestimonialsSection from './components/TestimonialsSection'
 import ContactSection from './components/ContactSection'
 import ChatBotWidget from './components/ChatBotWidget'
 import Footer from './components/Footer'
@@ -17,8 +20,11 @@ function App() {
       <AboutSection />
       <JourneySection />
       <ProjectsSection />
-      <SkillsSection />
-      <MentorshipSpeakingSection />
+      <MediaPressSection />
+      <AchievementsSection />
+      <SpeakingSection />
+      <MentorshipSection />
+      <TestimonialsSection />
       <ContactSection />
       <ChatBotWidget />
       <Footer />
