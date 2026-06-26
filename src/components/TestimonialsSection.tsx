@@ -1,82 +1,103 @@
-export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      text: "Mr K represents the new wave of AI founders — technically brilliant, community-driven, and relentlessly focused on impact.",
-      author: "Tech Community Leader",
-      role: "Google Developer Programs"
-    },
-    {
-      text: "His products aren't demos — they're production-grade systems that solve real business problems with automation.",
-      author: "Industry Mentor",
-      role: "VDart Inc."
-    },
-    {
-      text: "Rare combination of deep AI expertise and the ability to inspire an entire campus to start building systems.",
-      author: "Faculty Advisor",
-      role: "Seshasayee Institute of Technology"
-    },
-    {
-      text: "The Mr K AI Ecosystem is proof that student founders can compete with anyone globally in shipping SaaS tools.",
-      author: "Peer Founder",
-      role: "Startup Community"
-    },
-    {
-      text: "Mr K's mentorship transformed how I approach building AI products. His clarity and technical depth are unmatched.",
-      author: "Arjun S.",
-      role: "Aspiring AI Engineer"
-    },
-    {
-      text: "Working under his guidance at community events gave me the confidence to ship my first full-stack project.",
-      author: "Priya R.",
-      role: "Computer Science Student"
-    }
-  ]
+import { motion } from 'framer-motion'
 
+const testimonials = [
+  {
+    quote: "Mr K represents the new wave of AI founders — technically brilliant, community-driven, and relentlessly focused on impact.",
+    name: "Tech Community Leader",
+    role: "Google Developer Programs",
+    initial: "G",
+  },
+  {
+    quote: "His products aren't demos — they're production-grade systems that solve real business problems. Rare for a student founder.",
+    name: "Industry Mentor",
+    role: "VDart Inc.",
+    initial: "V",
+  },
+  {
+    quote: "Rare combination of deep AI expertise and the ability to inspire an entire campus to start building.",
+    name: "Faculty Advisor",
+    role: "Seshasayee Institute of Technology",
+    initial: "S",
+  },
+  {
+    quote: "Mr K's mentorship transformed how I approach building AI products. His clarity and technical depth are unmatched.",
+    name: "Arjun S.",
+    role: "Aspiring AI Engineer",
+    initial: "A",
+  },
+]
+
+export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="testimonials-section bg-black" style={{ padding: '80px 0', borderTop: '1px solid #111' }}>
-      <div className="container">
-        
-        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-          <h2 className="section-title primary" style={{ fontSize: '40px', marginBottom: '15px' }}>
+    <section style={{ background: '#0F0F10', padding: '140px 0', position: 'relative', overflow: 'hidden' }}>
+
+      {/* Ghost */}
+      <div style={{
+        position: 'absolute', bottom: '5%', right: '-2%',
+        fontFamily: 'var(--font-display)', fontSize: 'clamp(80px, 15vw, 200px)',
+        color: 'rgba(255,255,255,0.025)', fontWeight: 900, textTransform: 'uppercase',
+        letterSpacing: '-6px', userSelect: 'none', pointerEvents: 'none', lineHeight: 1,
+      }}>TRUST</div>
+
+      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 var(--pad-desktop)', position: 'relative', zIndex: 2 }}>
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+          <span className="section-label">What People Say</span>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 5vw, 72px)', textTransform: 'uppercase', letterSpacing: '-1px', lineHeight: 1, color: '#fff', marginBottom: '80px', marginTop: '8px' }}>
             Testimonials
           </h2>
-          <p style={{ color: '#aaa', fontSize: '15.5px', maxWidth: '650px', margin: '0 auto', lineHeight: '1.6' }}>
-            Social proof and endorsements from industry mentors, faculty members, peer startup founders, and student developers.
-          </p>
-        </div>
+        </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
-          {testimonials.map((t, idx) => (
-            <div 
-              key={idx} 
-              style={{ 
-                background: '#080808', 
-                border: '1px solid #222', 
-                borderRadius: '8px', 
-                padding: '30px', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'space-between',
-                transition: 'border-color 0.3s ease'
-              }}
-              onMouseOver={(e) => e.currentTarget.style.borderColor = 'var(--color-primary)'}
-              onMouseOut={(e) => e.currentTarget.style.borderColor = '#222'}
-            >
-              <p style={{ color: '#ccc', fontSize: '14.5px', lineHeight: '1.6', fontStyle: 'italic', marginBottom: '20px' }}>
-                "{t.text}"
-              </p>
-              <div style={{ borderTop: '1px solid #222', paddingTop: '15px' }}>
-                <h4 style={{ color: 'var(--color-primary)', fontSize: '14.5px', fontWeight: 'bold', marginBottom: '4px' }}>
-                  {t.author}
-                </h4>
-                <span style={{ color: '#555', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  {t.role}
-                </span>
-              </div>
+        {/* Large featured testimonial */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          style={{
+            background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
+            borderRadius: '24px', padding: '60px', marginBottom: '24px', position: 'relative',
+          }}
+        >
+          {/* Quote mark */}
+          <div style={{ fontFamily: 'Georgia, serif', fontSize: '120px', lineHeight: 0.8, color: 'rgba(255,212,0,0.15)', position: 'absolute', top: '32px', left: '48px', userSelect: 'none' }}>"</div>
+          <blockquote style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', color: '#fff', lineHeight: 1.65, marginBottom: '40px', paddingLeft: '0', position: 'relative', zIndex: 1 }}>
+            {testimonials[0].quote}
+          </blockquote>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div style={{ width: '52px', height: '52px', borderRadius: '50%', background: 'rgba(255,212,0,0.15)', border: '1px solid rgba(255,212,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontSize: '22px', color: 'var(--accent)', flexShrink: 0 }}>{testimonials[0].initial}</div>
+            <div>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: '#fff' }}>{testimonials[0].name}</div>
+              <div style={{ fontSize: '13px', color: 'var(--secondary)', marginTop: '2px' }}>{testimonials[0].role}</div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Remaining 3 */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+          {testimonials.slice(1).map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.7 }}
+              whileHover={{ y: -6, borderColor: 'rgba(255,212,0,0.2)' }}
+              style={{
+                background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
+                borderRadius: '20px', padding: '32px', transition: 'border-color 0.3s',
+              }}
+            >
+              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.75, marginBottom: '28px', fontStyle: 'italic' }}>"{t.quote}"</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '20px' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontSize: '18px', color: 'var(--accent)', flexShrink: 0 }}>{t.initial}</div>
+                <div>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#fff' }}>{t.name}</div>
+                  <div style={{ fontSize: '12px', color: 'var(--secondary)', marginTop: '1px' }}>{t.role}</div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   )

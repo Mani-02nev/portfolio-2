@@ -26,7 +26,7 @@
 | **Email** | karuppasamy.murugesan02@gmail.com |
 | **GitHub** | https://github.com/Mani-02nev |
 | **LinkedIn** | https://www.linkedin.com/in/karuppasamy-m-b39995377/ |
-| **Instagram** | https://www.instagram.com/ |
+| **Instagram** | https://www.instagram.com/mr_k.inc/ |
 | **Calendly** | https://calendly.com/ |
 | **Location** | Trichy, India |
 | **Availability** | Open for MNC opportunities and high-impact software engineering roles |

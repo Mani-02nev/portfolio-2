@@ -1,34 +1,34 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import HeroSection from './components/HeroSection'
-import AboutSection from './components/AboutSection'
-import JourneySection from './components/JourneySection'
-import ProjectsSection from './components/ProjectsSection'
-import MediaPressSection from './components/MediaPressSection'
-import AchievementsSection from './components/AchievementsSection'
-import SpeakingSection from './components/SpeakingSection'
-import MentorshipSection from './components/MentorshipSection'
-import TestimonialsSection from './components/TestimonialsSection'
-import ContactSection from './components/ContactSection'
-import ChatBotWidget from './components/ChatBotWidget'
 import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import JourneyPage from './pages/JourneyPage'
+import CompaniesPage from './pages/CompaniesPage'
+import ProductsPage from './pages/ProductsPage'
+import SpeakingPage from './pages/SpeakingPage'
+import MentorshipPage from './pages/MentorshipPage'
+import BlogPage from './pages/BlogPage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <HeroSection />
-      <AboutSection />
-      <JourneySection />
-      <ProjectsSection />
-      <MediaPressSection />
-      <AchievementsSection />
-      <SpeakingSection />
-      <MentorshipSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <ChatBotWidget />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/journey" element={<JourneyPage />} />
+          <Route path="/companies" element={<CompaniesPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/speaking" element={<SpeakingPage />} />
+          <Route path="/mentorship" element={<MentorshipPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 

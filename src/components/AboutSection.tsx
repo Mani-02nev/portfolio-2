@@ -1,95 +1,95 @@
+import { motion } from 'framer-motion'
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 36 },
+  visible: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.7, ease: [0.16,1,0.3,1] } })
+}
+
 export default function AboutSection() {
-  const values = [
-    { icon: "⚡", title: "Velocity", desc: "Ship fast. Iterate daily. A working product beats a perfect plan." },
-    { icon: "🧠", title: "Intelligence", desc: "AI isn't the future — it's the present. We embed it in everything we build." },
-    { icon: "🌍", title: "Impact", desc: "Every product we launch has a mission beyond revenue." },
-    { icon: "🤝", title: "Integrity", desc: "Transparent decisions. No shortcuts. Long-term trust over short-term gain." },
-    { icon: "🔥", title: "Resilience", desc: "Started from nothing. Built everything. Failure is part of the blueprint." },
-    { icon: "🌱", title: "Growth", desc: "I grow my team, my companies, and myself simultaneously." },
-  ]
-
   return (
-    <section id="about" style={{ padding: '100px 0', background: '#0a0a0a' }}>
-      <div className="container">
+    <section style={{ background: '#111111', padding: '140px 0', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 var(--pad-desktop)' }}>
 
-        {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <span className="section-badge">FOUNDER STORY</span>
-          <h2 className="section-heading">Who Is <span style={{ color: 'var(--color-primary)' }}>Mr K</span>?</h2>
-        </div>
+        {/* Top label */}
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <span className="section-label">Founder Story</span>
+        </motion.div>
 
-        {/* Story Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '40px',
-          marginBottom: '80px',
-          alignItems: 'start'
-        }}>
-          {/* Story Text */}
-          <div style={{ gridColumn: 'span 1' }}>
-            <h3 style={{ fontSize: '22px', fontWeight: '700', color: '#fff', marginBottom: '20px', fontFamily: 'var(--font-heading)', textTransform: 'uppercase', letterSpacing: '1px' }}>
-              The Journey
-            </h3>
-            <p style={{ color: '#888', lineHeight: '1.85', marginBottom: '18px', fontSize: '15px' }}>
-              I'm <strong style={{ color: '#ccc' }}>Karuppasamy M</strong> — known as <strong style={{ color: 'var(--color-primary)' }}>Mr K</strong>. I grew up with a singular obsession: build things that matter at scale. From my earliest days in tech, I saw gaps where AI could completely transform industries.
-            </p>
-            <p style={{ color: '#888', lineHeight: '1.85', marginBottom: '18px', fontSize: '15px' }}>
-              I founded the <strong style={{ color: '#ccc' }}>Mr K AI Ecosystem</strong> with a simple thesis — the best companies are built on intelligence, speed, and purpose. We're not just shipping software; we're engineering competitive advantages for founders, enterprises, and communities.
-            </p>
-            <p style={{ color: '#888', lineHeight: '1.85', fontSize: '15px' }}>
-              As a mentor, I've helped 50+ developers accelerate their careers. As a speaker, I've shared the founder's playbook with 200+ students and entrepreneurs across India.
-            </p>
-          </div>
+        {/* 2-column magazine layout */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start', marginTop: '16px' }}>
 
-          {/* Vision Box */}
-          <div style={{
-            background: 'rgba(255, 209, 0, 0.04)',
-            border: '1px solid rgba(255, 209, 0, 0.15)',
-            borderRadius: '12px',
-            padding: '36px',
-          }}>
-            <h3 style={{ fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--color-primary)', marginBottom: '16px', fontWeight: 700 }}>Mission Statement</h3>
-            <p style={{ fontSize: '22px', lineHeight: '1.55', color: '#fff', fontWeight: '500', marginBottom: '28px', fontFamily: 'var(--font-heading)' }}>
-              "To build AI-powered companies and ecosystems that solve real-world problems with elegance, scalability, and measurable impact."
-            </p>
-            <div style={{ borderTop: '1px solid #222', paddingTop: '24px' }}>
-              <h4 style={{ fontSize: '12px', letterSpacing: '2px', textTransform: 'uppercase', color: '#555', marginBottom: '14px' }}>Leadership Philosophy</h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {[
-                  "Lead from the trenches — I code, I sell, I mentor",
-                  "Build systems that outlast individuals",
-                  "Hire for curiosity, train for excellence",
-                  "Ship before you're ready — then improve daily"
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '10px' }}>
-                    <span style={{ color: 'var(--color-primary)', flexShrink: 0, marginTop: '2px' }}>▸</span>
-                    <span style={{ color: '#888', fontSize: '14px', lineHeight: 1.6 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
+          {/* Left — oversized heading */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(52px, 7vw, 100px)',
+              textTransform: 'uppercase',
+              letterSpacing: '-2px',
+              lineHeight: 0.95,
+              color: '#fff',
+              marginBottom: '40px',
+            }}>
+              Who<br />Is<br /><span style={{ color: 'var(--accent)' }}>Mr K?</span>
+            </h2>
+
+            {/* Image block */}
+            <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden' }}>
+              <img
+                src="/about.png"
+                alt="Mr K — Founder"
+                style={{
+                  width: '100%', height: '420px',
+                  objectFit: 'cover', objectPosition: 'top center',
+                  filter: 'grayscale(100%) contrast(1.1) brightness(0.92)',
+                  display: 'block',
+                }}
+              />
+              {/* Gold overlay strip */}
+              <div style={{
+                position: 'absolute', bottom: 0, left: 0, right: 0,
+                height: '4px', background: 'var(--accent)',
+              }} />
             </div>
-          </div>
-        </div>
+          </motion.div>
 
-        {/* Values Grid */}
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', textTransform: 'uppercase', letterSpacing: '2px', color: '#fff' }}>Core Values</h3>
-        </div>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '20px'
-        }}>
-          {values.map((val, i) => (
-            <div key={i} className="card" style={{ textAlign: 'center', padding: '32px 24px' }}>
-              <div style={{ fontSize: '36px', marginBottom: '16px' }}>{val.icon}</div>
-              <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', textTransform: 'uppercase', letterSpacing: '1.5px', color: '#fff', marginBottom: '10px' }}>{val.title}</h4>
-              <p style={{ color: '#666', fontSize: '13px', lineHeight: 1.7 }}>{val.desc}</p>
+          {/* Right — story content */}
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={1} viewport={{ once: true }}
+            style={{ paddingTop: '20px' }}>
+
+            <p style={{ fontSize: '18px', lineHeight: 1.85, color: 'rgba(255,255,255,0.8)', marginBottom: '28px', fontWeight: 400 }}>
+              I'm <strong style={{ color: '#fff' }}>Karuppasamy M</strong> — known as <strong style={{ color: 'var(--accent)' }}>Mr K</strong>. A Computer Engineering student at Seshasayee Institute of Technology, Trichy, who decided to build real AI companies before graduating.
+            </p>
+            <p style={{ fontSize: '16px', lineHeight: 1.85, color: 'var(--secondary)', marginBottom: '28px' }}>
+              I founded the <strong style={{ color: '#ccc' }}>Mr K AI Ecosystem</strong> — a portfolio of intelligent SaaS products across legal, HR, sales, health, and autonomous agent domains. Every product is production-grade and solves real business problems.
+            </p>
+            <p style={{ fontSize: '16px', lineHeight: 1.85, color: 'var(--secondary)', marginBottom: '40px' }}>
+              As a <strong style={{ color: '#ccc' }}>Google Campus Ambassador</strong>, I lead developer communities, organize AI workshops, and mentor the next generation of builders. My mission is simple — build systems that outlast individuals and create lasting impact.
+            </p>
+
+            {/* Key highlights — horizontal list */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+              {[
+                { label: 'Education', value: 'Seshasayee Institute of Technology, Trichy' },
+                { label: 'Role', value: 'Founder & CEO, Mr K AI Ecosystem' },
+                { label: 'Ambassador', value: 'Google Campus Ambassador 2026' },
+                { label: 'Experience', value: 'VDart Inc. · Novi Tech · Google' },
+                { label: 'Location', value: 'Trichy, India · Open to Global' },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  display: 'flex', gap: '20px',
+                  padding: '16px 0',
+                  borderBottom: '1px solid rgba(255,255,255,0.06)',
+                }}>
+                  <span style={{ fontSize: '12px', color: 'var(--secondary)', letterSpacing: '1.5px', textTransform: 'uppercase', width: '110px', flexShrink: 0, paddingTop: '2px' }}>{item.label}</span>
+                  <span style={{ fontSize: '14px', color: '#fff', lineHeight: 1.5 }}>{item.value}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </motion.div>
         </div>
       </div>
+
+      <style>{`@media(max-width:900px){.about-grid{grid-template-columns:1fr !important}}`}</style>
     </section>
   )
 }
