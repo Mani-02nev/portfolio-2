@@ -65,6 +65,7 @@ export default function MissionSection() {
 
         {/* Background words row */}
         <motion.div
+          className="mission-words-row"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -88,7 +89,7 @@ export default function MissionSection() {
         </motion.div>
 
         {/* Values — horizontal list, not cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '60px 80px' }}>
+        <div className="mission-values-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '60px 80px' }}>
           {values.map((v, i) => (
             <motion.div
               key={i}
@@ -112,6 +113,19 @@ export default function MissionSection() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        .mission-words-row {
+          flex-wrap: wrap;
+          gap: 20px 40px !important;
+        }
+        @media (max-width: 768px) {
+          .mission-values-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

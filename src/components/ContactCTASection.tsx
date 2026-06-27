@@ -16,7 +16,7 @@ export default function ContactCTASection() {
       {/* Gold glow */}
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '500px', height: '300px', background: 'radial-gradient(ellipse, rgba(255,212,0,0.06) 0%, transparent 70%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
 
-      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 var(--pad-desktop)', position: 'relative', zIndex: 2, textAlign: 'center' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
 
         {/* Animated accent line */}
         <motion.div

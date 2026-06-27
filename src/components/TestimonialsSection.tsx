@@ -16,8 +16,8 @@ const testimonials = [
   {
     quote: "Rare combination of deep AI expertise and the ability to inspire an entire campus to start building.",
     name: "Faculty Advisor",
-    role: "Seshasayee Institute of Technology",
-    initial: "S",
+    role: "Teack Stackers",
+    initial: "T",
   },
   {
     quote: "Mr K's mentorship transformed how I approach building AI products. His clarity and technical depth are unmatched.",
@@ -53,6 +53,7 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="featured-testimonial-card"
           style={{
             background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
             borderRadius: '24px', padding: '60px', marginBottom: '24px', position: 'relative',
@@ -73,7 +74,7 @@ export default function TestimonialsSection() {
         </motion.div>
 
         {/* Remaining 3 */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+        <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
           {testimonials.slice(1).map((t, i) => (
             <motion.div
               key={i}
@@ -99,6 +100,18 @@ export default function TestimonialsSection() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .testimonials-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          .featured-testimonial-card {
+            padding: 28px 20px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

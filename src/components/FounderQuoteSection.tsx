@@ -4,7 +4,7 @@ const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 0) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.08, duration: 0.7, ease: [0.16,1,0.3,1] }
+    transition: { delay: i * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }
   })
 }
 
@@ -25,14 +25,14 @@ export default function FounderQuoteSection() {
         lineHeight: 1,
       }}>VISION</div>
 
-      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 var(--pad-desktop)', position: 'relative', zIndex: 2 }}>
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
 
         {/* Accent line */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16,1,0.3,1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
           style={{
             width: '60px', height: '3px',
             background: 'var(--accent)',

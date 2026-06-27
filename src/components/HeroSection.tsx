@@ -15,10 +15,16 @@ const BANNER_H = 52
 
 export default function HeroSection() {
   const [roleIdx, setRoleIdx] = useState(0)
+  const [titleIdx, setTitleIdx] = useState(0)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const t = setInterval(() => setRoleIdx(i => (i + 1) % ROLES.length), 3000)
+    return () => clearInterval(t)
+  }, [])
+
+  useEffect(() => {
+    const t = setInterval(() => setTitleIdx(i => (i + 1) % HERO_TITLES.length), 4000)
     return () => clearInterval(t)
   }, [])
 
@@ -44,41 +50,27 @@ export default function HeroSection() {
     }}>
 
       {/* ── FULL-WIDTH NAME — KARUPPASAMY fills like SIDD AHMED / POSITIVE TRIBE ── */}
-      <div style={{
+      <div className="hero-title-container" style={{
         position: 'absolute',
-        top: 'calc(var(--nav-h) + 8px)',
         left: 0,
         right: 0,
         zIndex: 2,
         pointerEvents: 'none',
         userSelect: 'none',
         overflow: 'hidden',
-        ...fade(0.04),
+        ...fade(0.04)
       }}>
-        <div style={{
-          fontFamily: 'var(--font-display)',
-          /* 11 chars — naturally fills ~85–92% width at these sizes */
-          fontSize: 'clamp(72px, 13.5vw, 200px)',
-          fontWeight: 900,
-          textTransform: 'uppercase',
-          letterSpacing: '-3px',
-          lineHeight: 0.88,
-          color: '#FFD100',
-          textAlign: 'center',
-          padding: '0 24px',
-          whiteSpace: 'nowrap',
-        }}>
-          KARUPPASAMY
+        <div
+          key={titleIdx}
+          className="animate-title hero-title"
+        >
+          {HERO_TITLES[titleIdx]}
         </div>
       </div>
 
-      {/* ── FOUNDER PHOTO — absolute center of the page ── */}
-      <div style={{
+      {/* ── FOUNDER PHOTO ── */}
+      <div className="hero-photo-container" style={{
         position: 'absolute',
-        /* vertically: from nav to banner, centered */
-        top: 'var(--nav-h)',
-        bottom: `${BANNER_H}px`,
-        /* horizontally: centered */
         left: 0,
         right: 0,
         display: 'flex',
@@ -104,58 +96,44 @@ export default function HeroSection() {
           src="/hero-image.png"
           alt="Karuppasamy M — Mr K, Founder & CEO"
           loading="eager"
-          style={{
-            /* fills the available height, never overflows width */
-            height: '100%',
-            width: 'auto',
-            maxWidth: '54vw',
-            objectFit: 'contain',
-            objectPosition: 'bottom center',
-            display: 'block',
-            position: 'relative',
-            zIndex: 1,
-            filter: 'grayscale(100%) contrast(1.1) brightness(0.95)',
-          }}
         />
       </div>
 
       {/* ── LEFT BLOCK — CTA + stats ── */}
-      <div style={{
+      <div className="hero-left-block" style={{
         position: 'absolute',
-        left: '72px',
-        top: '54%',
         zIndex: 10,
         ...fade(0.24),
       }}>
         {/* Role badge */}
-        <div style={{
+        <div className="hero-role-badge" style={{
           display: 'inline-block',
           border: '1px solid rgba(255,209,0,0.35)',
           color: '#FFD100',
-          fontSize: '10px', fontWeight: 800,
-          letterSpacing: '2px', textTransform: 'uppercase',
-          padding: '4px 14px', borderRadius: '999px',
-          marginBottom: '16px',
+          fontSize: '11px', fontWeight: 800,
+          letterSpacing: '2.2px', textTransform: 'uppercase',
+          padding: '5px 16px', borderRadius: '999px',
+          marginBottom: '18px',
         }}>
           {ROLES[roleIdx]}
         </div>
 
         {/* Yellow CTA */}
-        <div style={{ marginBottom: '28px' }}>
+        <div className="hero-cta-btn" style={{ marginBottom: '32px' }}>
           <Link to="/contact" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             background: '#FFD100', color: '#000',
-            fontWeight: 800, fontSize: '14px',
-            padding: '0 28px', height: '50px', borderRadius: '999px',
+            fontWeight: 800, fontSize: '15.5px',
+            padding: '0 32px', height: '55px', borderRadius: '999px',
             transition: 'box-shadow 0.25s, transform 0.2s',
           }}
             onMouseOver={e => {
               (e.currentTarget as HTMLElement).style.boxShadow = '0 0 36px rgba(255,209,0,0.5)'
-              ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
+                ; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
             }}
             onMouseOut={e => {
               (e.currentTarget as HTMLElement).style.boxShadow = 'none'
-              ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                ; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
             }}
           >
             Let's Build Together →
@@ -163,25 +141,25 @@ export default function HeroSection() {
         </div>
 
         {/* Stats + social icons */}
-        <div style={{ display: 'flex', gap: '28px' }}>
+        <div className="hero-stats-row" style={{ display: 'flex', gap: '32px' }}>
           {[
-            { num: '9+', social: SOCIALS[0] },
-            { num: '50+', social: SOCIALS[1] },
-            { num: '200+', social: SOCIALS[2] },
+            { num: '2.2K', social: SOCIALS[0] },
+            { num: '500+', social: SOCIALS[1] },
+            { num: '5K+', social: SOCIALS[2] },
           ].map((s, i) => (
-            <div key={i} style={{ textAlign: 'center' }}>
+            <div key={i} style={{ textAlign: 'center' }} className="hero-stat-col">
               <div style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '40px', color: '#fff',
+                fontSize: '44px', color: '#fff',
                 letterSpacing: '-1px', lineHeight: 1,
-              }}>{s.num}</div>
+              }} className="hero-stat-num">{s.num}</div>
               <a
                 href={s.social.href} target="_blank" rel="noopener noreferrer"
                 style={{ display: 'inline-flex', marginTop: '8px', color: 'rgba(255,255,255,0.4)', transition: 'color 0.2s' }}
                 onMouseOver={e => (e.currentTarget.style.color = '#FFD100')}
                 onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="hero-stat-icon">
                   <path d={s.social.path} />
                 </svg>
               </a>
@@ -190,27 +168,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* ── RIGHT BLOCK — tagline ── */}
-      <div style={{
-        position: 'absolute',
-        right: '72px',
-        top: '54%',
-        zIndex: 10,
-        maxWidth: '240px',
-        ...fade(0.28),
-      }}>
-        <p style={{
-          fontSize: '13px',
-          color: 'rgba(255,255,255,0.45)',
-          lineHeight: 1.9,
-        }}>
-          Empowering Visionaries,<br />
-          Inspiring Change.<br /><br />
-          Karuppasamy's Journey to<br />
-          Building Purpose-Driven<br />
-          AI Companies.
-        </p>
-      </div>
+
 
       {/* ── YELLOW BOTTOM BANNER — marquee ── */}
       <div style={{
@@ -245,6 +203,111 @@ export default function HeroSection() {
         @keyframes marquee {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
+        }
+        @keyframes titleAnimation {
+          0% {
+            opacity: 0;
+            transform: translateY(-40px);
+            filter: blur(8px);
+          }
+          10% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+          }
+          90% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(8px);
+          }
+        }
+        .animate-title {
+          animation: titleAnimation 4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+        }
+        .hero-title-container {
+          top: calc(var(--nav-h) + 8px);
+        }
+        .hero-title {
+          font-family: var(--font-display);
+          font-size: clamp(80px, 15vw, 220px);
+          font-weight: 900;
+          text-transform: uppercase;
+          letter-spacing: -3.5px;
+          line-height: 0.88;
+          color: #FFD100;
+          text-align: center;
+          padding: 0 24px;
+          white-space: nowrap;
+        }
+        .hero-photo-container {
+          top: var(--nav-h);
+          bottom: 52px; /* BANNER_H */
+        }
+        .hero-photo-container img {
+          height: 100%;
+          width: auto;
+          max-width: 54vw;
+          object-fit: contain;
+          object-position: bottom center;
+          display: block;
+          position: relative;
+          z-index: 1;
+          filter: grayscale(100%) contrast(1.1) brightness(0.95);
+          transform: scale(1.1);
+          transform-origin: bottom center;
+        }
+        .hero-left-block {
+          left: 84px;
+          top: 52%;
+          transform: translateY(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        @media (max-width: 768px) {
+          .hero-title-container {
+            top: calc(var(--nav-h) + 16px);
+          }
+          .hero-title {
+            font-size: clamp(48px, 12vw, 84px);
+            letter-spacing: -1.5px;
+          }
+          .hero-photo-container {
+            top: calc(var(--nav-h) + 60px);
+            bottom: 110px;
+          }
+          .hero-photo-container img {
+            max-width: 90vw;
+          }
+          .hero-role-badge, .hero-cta-btn {
+            display: none !important;
+          }
+          .hero-left-block {
+            left: 0;
+            right: 0;
+            top: auto;
+            bottom: 24px;
+            transform: none;
+            align-items: center;
+            padding: 0 16px;
+          }
+          .hero-stats-row {
+            width: 100% !important;
+            justify-content: space-around !important;
+            gap: 0 !important;
+          }
+          .hero-stat-num {
+            font-size: 32px !important;
+          }
+          .hero-stat-icon {
+            width: 18px !important;
+            height: 18px !important;
+          }
         }
       `}</style>
     </section>

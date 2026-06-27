@@ -8,7 +8,7 @@ const products = [
     tech: ['React', 'NLP', 'Full Stack'],
     live: 'https://pickup-law-agent.vercel.app/',
     github: null,
-    image: '/law_agent.png',
+    image: '/law.png',
   },
   {
     title: 'Agent K',
@@ -17,7 +17,7 @@ const products = [
     tech: ['React', 'Python', 'Full Stack'],
     live: 'https://agent02.vercel.app/',
     github: null,
-    image: '/agent_k_dashboard.png',
+    image: '/Agentk.png',
   },
   {
     title: 'AI HR Management System',
@@ -26,7 +26,7 @@ const products = [
     tech: ['Python', 'Machine Learning', 'Full Stack'],
     live: null,
     github: 'https://github.com/Mani-02nev/HRMS',
-    image: '/hrms_dashboard.png',
+    image: '/hrms.png',
   },
   {
     title: 'KS AI Resume Builder',
@@ -35,7 +35,7 @@ const products = [
     tech: ['React', 'AI', 'Full Stack'],
     live: 'https://kscv.vercel.app/',
     github: null,
-    image: '/ks_resume_builder.png',
+    image: '/ks.png',
   },
   {
     title: 'AI Sales Intelligence',
@@ -44,7 +44,7 @@ const products = [
     tech: ['Python', 'Data Analytics', 'Full Stack'],
     live: null,
     github: 'https://github.com/Mani-02nev/Ai-Sales-Inteligence',
-    image: '/sales_intelligence.png',
+    image: '/ai_sales.png',
   },
 ]
 
@@ -80,6 +80,7 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.8, ease: [0.16,1,0.3,1] }}
+                className="product-row"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
@@ -98,15 +99,6 @@ export default function ProjectsSection() {
                     onMouseOver={(e) => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1.03)' }}
                     onMouseOut={(e) => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1)' }}
                   />
-                  {/* Number watermark */}
-                  <div style={{
-                    position: 'absolute', top: '16px', left: '16px',
-                    fontFamily: 'var(--font-display)', fontSize: '13px',
-                    color: 'rgba(255,255,255,0.25)', letterSpacing: '2px',
-                    background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)',
-                    padding: '4px 10px', borderRadius: '6px',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                  }}>{String(i+1).padStart(2,'0')}</div>
                 </div>
 
                 {/* Content */}
@@ -146,7 +138,15 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      <style>{`@media(max-width:900px){.product-row{grid-template-columns:1fr !important; direction:ltr !important;}}`}</style>
+      <style>{`
+        @media (max-width: 900px) {
+          .product-row {
+            grid-template-columns: 1fr !important;
+            direction: ltr !important;
+            gap: 32px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

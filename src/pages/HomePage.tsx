@@ -19,7 +19,7 @@ export default function HomePage() {
       {/* 3. Who is Mr K */}
       <AboutSection />
 
-      {/* 4. The journey */}
+      {/* 4. The Journey Roadmap */}
       <JourneySection />
 
       {/* 5. Mission + Core Values */}

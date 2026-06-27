@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
-  const cols = [
+  const cols: {
+    heading: string
+    links: { label: string; to: string; external?: boolean }[]
+  }[] = [
     {
       heading: 'Navigate',
       links: [
         { label: 'Home', to: '/' },
-        { label: 'Journey', to: '/journey' },
+        { label: 'Moments', to: '/moments' },
         { label: 'Companies', to: '/companies' },
         { label: 'Products', to: '/products' },
       ],

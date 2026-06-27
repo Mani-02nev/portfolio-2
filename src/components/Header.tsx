@@ -4,12 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
   { label: 'Home', to: '/' },
+  { label: 'Booking', to: '/contact' },
   { label: 'Journey', to: '/journey' },
-  { label: 'Companies', to: '/companies' },
-  { label: 'Products', to: '/products' },
-  { label: 'Speaking', to: '/speaking' },
   { label: 'Mentorship', to: '/mentorship' },
-  { label: 'Blog', to: '/blog' },
+  { label: 'Products', to: '/products' },
+  { label: 'Media', to: '/speaking' },
+  { label: 'Blogs', to: '/blog' },
+  { label: 'Careers', to: '/companies', hasDropdown: true },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -29,23 +30,20 @@ export default function Header() {
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.16,1,0.3,1] }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       style={{
         position: 'fixed',
         top: 0, left: 0, right: 0,
         zIndex: 1000,
         height: 'var(--nav-h)',
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent',
-        background: scrolled ? 'rgba(5,5,5,0.85)' : 'transparent',
+        background: scrolled ? '#000000' : 'rgba(0,0,0,0.85)',
         backdropFilter: scrolled ? 'blur(30px)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(30px)' : 'none',
         transition: 'background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease',
       }}
     >
-      <div style={{
-        maxWidth: 'var(--max-w)',
-        margin: '0 auto',
-        padding: '0 var(--pad-desktop)',
+      <div className="container" style={{
         height: '100%',
         display: 'flex',
         alignItems: 'center',
@@ -63,59 +61,66 @@ export default function Header() {
           />
         </NavLink>
 
-        {/* Desktop nav */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '2px' }} className="desktop-nav">
+        {/* Centered Desktop Nav */}
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '2px', justifyContent: 'center', flexGrow: 1 }} className="desktop-nav">
           {navLinks.map(link => (
             <NavLink
-              key={link.to}
+              key={link.label}
               to={link.to}
               end={link.to === '/'}
               style={({ isActive }) => ({
-                position: 'relative',
                 padding: '8px 14px',
                 borderRadius: '8px',
-                fontSize: '13px',
+                fontSize: '13.5px',
                 fontWeight: 500,
                 letterSpacing: '0.2px',
-                color: isActive ? '#fff' : 'rgba(255,255,255,0.5)',
+                color: isActive ? 'var(--accent)' : 'rgba(255,255,255,0.7)',
                 background: 'transparent',
                 transition: 'color 0.2s',
+                display: 'inline-flex',
+                alignItems: 'center',
               })}
-              onMouseOver={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseOver={(e) => (e.currentTarget.style.color = 'var(--accent)')}
               onMouseOut={(e) => {
                 const isActive = e.currentTarget.getAttribute('aria-current') === 'page'
-                e.currentTarget.style.color = isActive ? '#fff' : 'rgba(255,255,255,0.5)'
+                e.currentTarget.style.color = isActive ? 'var(--accent)' : 'rgba(255,255,255,0.7)'
               }}
             >
-              {({ isActive }) => (
-                <>
-                  {link.label}
-                  {isActive && (
-                    <motion.div
-                      layoutId="nav-underline"
-                      style={{
-                        position: 'absolute',
-                        bottom: '2px', left: '14px', right: '14px',
-                        height: '2px',
-                        background: 'var(--accent)',
-                        borderRadius: '2px',
-                      }}
-                      transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                </>
+              {link.label}
+              {link.hasDropdown && (
+                <span style={{ fontSize: '8px', marginLeft: '5px', opacity: 0.8, verticalAlign: 'middle' }}>▼</span>
               )}
             </NavLink>
           ))}
         </nav>
 
-        {/* Right — socials + CTA */}
+        {/* Centered Mobile Socials (Mockup style) */}
+        <div className="mobile-socials-row" style={{ display: 'none', gap: '14px', alignItems: 'center', justifyContent: 'center' }}>
+          {[
+            { label: 'Instagram', href: 'https://www.instagram.com/mr_k.inc/', path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z' },
+            { label: 'X', href: 'https://x.com/', path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' },
+            { label: 'Facebook', href: 'https://facebook.com/', path: 'M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z' },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/karuppasamy-m-b39995377/', path: 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z' },
+            { label: 'YouTube', href: 'https://youtube.com/', path: 'M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z' }
+          ].map(s => (
+            <a
+              key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+              style={{ color: '#fff', display: 'inline-flex', opacity: 0.85 }}
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                <path d={s.path} />
+              </svg>
+            </a>
+          ))}
+        </div>
+
+        {/* Right — Social Icons (No Contact Button in this style) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexShrink: 0 }}>
-          <div style={{ display: 'flex', gap: '12px' }} className="social-row">
+          <div style={{ display: 'flex', gap: '16px' }} className="social-row">
             {[
               { label: 'Instagram', href: 'https://www.instagram.com/mr_k.inc/', path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z' },
-              { label: 'GitHub', href: 'https://github.com/Mani-02nev', path: 'M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z' },
-              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/karuppasamy-m-b39995377/', path: 'M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z' },
+              { label: 'Facebook', href: 'https://facebook.com/', path: 'M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z' },
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/karuppasamy-m-b39995377/', path: 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z' },
             ].map(s => (
               <motion.a
                 key={s.label}
@@ -123,40 +128,17 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={s.label}
-                whileHover={{ scale: 1.15, color: 'var(--accent)' }}
-                style={{ color: 'rgba(255,255,255,0.35)', display: 'flex', transition: 'color 0.2s' }}
+                whileHover={{ scale: 1.12, color: 'var(--accent)' }}
+                style={{ color: '#ffffff', display: 'flex', transition: 'color 0.2s' }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d={s.path} />
                 </svg>
               </motion.a>
             ))}
           </div>
 
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-            <NavLink
-              to="/contact"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                background: 'var(--accent)',
-                color: '#000',
-                padding: '9px 20px',
-                borderRadius: '100px',
-                fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '0.3px',
-                transition: 'box-shadow 0.3s',
-              }}
-              onMouseOver={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = '0 0 30px rgba(255,212,0,0.4)' }}
-              onMouseOut={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = 'none' }}
-            >
-              Contact Me →
-            </NavLink>
-          </motion.div>
-
-          {/* Hamburger */}
+          {/* Hamburger (Mobile only) */}
           <button
             onClick={() => setMenuOpen(v => !v)}
             className="hamburger"
@@ -166,7 +148,7 @@ export default function Header() {
               padding: '4px', background: 'none', border: 'none', cursor: 'pointer',
             }}
           >
-            {[0,1,2].map(i => (
+            {[0, 1, 2].map(i => (
               <span key={i} style={{
                 display: 'block', width: '22px', height: '2px',
                 background: '#fff', borderRadius: '2px', transition: '0.3s',
@@ -196,7 +178,7 @@ export default function Header() {
             }}
           >
             {navLinks.map(link => (
-              <NavLink key={link.to} to={link.to} end={link.to === '/'}
+              <NavLink key={link.label} to={link.to} end={link.to === '/'}
                 style={({ isActive }) => ({
                   padding: '13px 16px', borderRadius: '8px',
                   fontSize: '15px', fontWeight: 500,
@@ -214,9 +196,6 @@ export default function Header() {
           .desktop-nav { display: none !important; }
           .hamburger { display: flex !important; }
           .social-row { display: none !important; }
-        }
-        @media (max-width: 1200px) {
-          header > div { padding: 0 var(--pad-tablet) !important; }
         }
       `}</style>
     </motion.header>

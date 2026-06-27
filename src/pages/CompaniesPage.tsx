@@ -30,7 +30,7 @@ export default function CompaniesPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {companies.map((co, i) => (
-              <div key={i} className="card" style={{ padding: '48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }}>
+              <div key={i} className="company-card" style={{ padding: '48px', alignItems: 'start' }}>
                 <div>
                   <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '20px' }}>
                     <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '36px', textTransform: 'uppercase', letterSpacing: '1px', color: '#fff' }}>
@@ -58,7 +58,7 @@ export default function CompaniesPage() {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {co.products.map((p, j) => (
                         <div key={j} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)' }}>
-                          <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--yellow)', flexShrink: 0 }} />
+                           <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--yellow)', flexShrink: 0 }} />
                           <span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>{p}</span>
                         </div>
                       ))}
@@ -70,6 +70,24 @@ export default function CompaniesPage() {
           </div>
         </div>
       </section>
+
+      <style>{`
+        .company-card {
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.06);
+          border-radius: 20px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 48px;
+        }
+        @media (max-width: 768px) {
+          .company-card {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+            padding: 24px !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }

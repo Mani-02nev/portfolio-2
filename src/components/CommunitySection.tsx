@@ -26,7 +26,7 @@ export default function CommunitySection() {
       <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 var(--pad-desktop)', position: 'relative', zIndex: 2 }}>
 
         {/* Header */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'end', marginBottom: '80px' }}>
+        <div className="community-header-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'end', marginBottom: '80px' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <span className="section-label">Community</span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 5vw, 72px)', textTransform: 'uppercase', letterSpacing: '-1px', lineHeight: 1, color: '#fff', marginTop: '8px' }}>
@@ -45,6 +45,7 @@ export default function CommunitySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
+          className="community-stats-grid"
           style={{
             display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
             background: 'rgba(255,255,255,0.02)',
@@ -54,7 +55,7 @@ export default function CommunitySection() {
           }}
         >
           {stats.map((s, i) => (
-            <div key={i} style={{
+            <div key={i} className="community-stat-item" style={{
               textAlign: 'center',
               borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
               padding: '0 20px',
@@ -68,7 +69,7 @@ export default function CommunitySection() {
         </motion.div>
 
         {/* Community grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+        <div className="community-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
           {communityItems.map((item, i) => (
             <motion.div
               key={i}
@@ -95,6 +96,7 @@ export default function CommunitySection() {
 
         {/* Google badge */}
         <motion.div
+          className="google-badge"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -114,6 +116,38 @@ export default function CommunitySection() {
           </div>
         </motion.div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .community-header-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+            margin-bottom: 48px !important;
+          }
+          .community-stats-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 24px 0 !important;
+            padding: 24px 16px !important;
+          }
+          .community-stat-item {
+            border-right: none !important;
+            padding: 0 8px !important;
+          }
+          .community-stat-item:nth-child(odd) {
+            border-right: 1px solid rgba(255,255,255,0.06) !important;
+          }
+          .community-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+          .google-badge {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            padding: 20px !important;
+            gap: 16px !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }
