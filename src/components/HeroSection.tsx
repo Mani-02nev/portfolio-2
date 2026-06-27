@@ -271,14 +271,14 @@ export default function HeroSection() {
         }
         @media (max-width: 768px) {
           .hero-title-container {
-            top: calc(var(--nav-h) + 16px);
+            top: calc(var(--nav-h) + 95px);
           }
           .hero-title {
             font-size: clamp(48px, 12vw, 84px);
             letter-spacing: -1.5px;
           }
           .hero-photo-container {
-            top: calc(var(--nav-h) + 60px);
+            top: calc(var(--nav-h) + 55px);
             bottom: 110px;
           }
           .hero-photo-container img {

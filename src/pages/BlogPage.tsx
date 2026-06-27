@@ -126,6 +126,63 @@ const ARTICLES: Article[] = [
       '### 4. Maintain Consistency and Transparency',
       'Communities thrive on reliable schedules. Whether it is a weekly tech discussion or a monthly newsletter, keep your pacing consistent. Share your build journey transparently—including launch failures—to humanize your founder story.'
     ]
+  },
+  {
+    id: 'student-saas-ideas',
+    category: 'Entrepreneurship',
+    title: 'SaaS Ideas for Student Builders: Solve Your Own Problems',
+    date: 'May 05, 2026',
+    readTime: '5 min read',
+    excerpt: 'A practical guide on identifying campus-level friction points, validation cycles, and building software that peers love.',
+    content: [
+      'The best way to learn software development is to build things that actual people use. As a student, you are surrounded by problems waiting to be solved. By identifying these issues, you can launch SaaS products with built-in validation.',
+      '### 1. Identify Campus Bottlenecks',
+      'Look around your daily environment. Are cafeteria queues too long? Is textbook trading disorganized? Are club registrations manual? These are all software opportunities. Solve a problem that you and your peers encounter daily.',
+      '### 2. Keep Your MVP Razor-Thin',
+      'Do not spend months designing a complex database schema. Build a simple website that solves the core problem in 5 minutes. If it is textbook rental, build a list page and a contact form. Let manual action handle the rest before automating.',
+      '### 3. Share Where Students Gather',
+      'You have direct access to your target audience. Share your prototype in WhatsApp groups, student clubs, and campus subreddits. Word of mouth among college students travels rapidly if your product offers immediate utility.',
+      '### 4. Transition to Public Validation',
+      'Even if your campus product is simple, write about your design choices and validation cycles on LinkedIn. Tech hiring managers love student builders who show commercial awareness and product validation experience.'
+    ]
+  },
+  {
+    id: 'tech-internship-guide',
+    category: 'Resume',
+    title: "Cracking Tech Internships: A Student's Survival Kit",
+    date: 'April 27, 2026',
+    readTime: '5 min read',
+    excerpt: 'Essential advice for junior developers on building projects, tracking applications, and preparing for tech interviews.',
+    content: [
+      "Securing a high-impact internship is a primary goal for student software engineers. The process can feel overwhelming, but a structured approach to preparation and applications will help you stand out from the crowd.",
+      '### 1. Build Custom Projects, Not Clones',
+      'Recruiters see thousands of identical weather apps and clone projects. Stand out by building original tools. Solve a local community problem, write about the challenges, and make sure your live deployment link works.',
+      '### 2. Build in Public and Share Weekly',
+      'Share your coding journey on social platforms. Explaining your bugs, database scaling choices, or clean UI refactors publicly shows your technical passion and communication skills.',
+      '### 3. Practice Core Technical Design',
+      'While coding assessments are important, understanding system architectures and database schemas sets you apart. Learn how to explain client-server communication, database relations, and caching mechanisms.',
+      '### 4. Create a Clean Application Tracker',
+      'Treat internship hunting like a project. Keep a spreadsheet tracking companies, application dates, resume versions sent, and follow-up deadlines. Persistence and systematic tracking are key to success.'
+    ]
+  },
+  {
+    id: 'build-in-public',
+    category: 'Entrepreneurship',
+    title: 'The Power of Building in Public: Share Your Journey',
+    date: 'April 15, 2026',
+    readTime: '4 min read',
+    excerpt: 'Why sharing your code, launch failures, and milestones openly on LinkedIn and Twitter attracts mentors and co-founders.',
+    content: [
+      'Building in public is the act of sharing your development milestones, failures, and statistics openly. It transforms programming from a solitary task into a community magnet, unlocking organic feedback and mentorship.',
+      '### 1. Build Trust Through Transparency',
+      'Share the real story. Posting about a database crash or a bug you spent 5 hours fixing is relatable. People respect founders who admit issues, explain how they resolved them, and share what they learned.',
+      '### 2. Document Your Milestones',
+      'Keep a log of your statistics—like active users, page views, or database records. When people see consistent growth metrics over time, they buy into your vision and are eager to support your launch.',
+      '### 3. Attract Mentors and Collaborators',
+      'Experienced developers and industry mentors are drawn to builders who display genuine passion and drive. By detailing your architecture publicly, you invite advice from senior leaders who can help optimize your code.',
+      '### 4. Create Your Own Luck',
+      'Opportunities like campus ambassadorships, speaking bookings, or SaaS partnerships come from visibility. Building in public makes you searchable, creating opportunities that traditional resumes cannot replicate.'
+    ]
   }
 ]
 

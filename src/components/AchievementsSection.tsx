@@ -5,7 +5,7 @@ export default function AchievementsSection() {
     { label: "Developers Mentored", value: "50+" },
     { label: "Students Inspired", value: "200+" },
     { label: "Years Building", value: "3+" },
-    { label: "Git Commits", value: "240+" },
+    { label: "Git Commits", value: "3K+" },
     { label: "Model Accuracy", value: "94.8%" },
     { label: "Events Conducted", value: "15+" }
   ]

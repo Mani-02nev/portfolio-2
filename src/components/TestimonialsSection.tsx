@@ -25,6 +25,30 @@ const testimonials = [
     role: "Aspiring AI Engineer",
     initial: "A",
   },
+  {
+    quote: "Karuppasamy's cloud study jams gave me the confidence to build my first full-stack React app. His guidance is hands-on and practical.",
+    name: "Devika R.",
+    role: "SIT Computer Science Student",
+    initial: "D",
+  },
+  {
+    quote: "Being part of the Mr K AI Builder workspace helped me find beta users for my project and completely changed how I think about UX validation.",
+    name: "Kavin K.",
+    role: "SaaS Builder Community Member",
+    initial: "K",
+  },
+  {
+    quote: "The Git and GitHub workshop conducted by Karuppasamy demystified version control. I went from staging errors to clean branching pipelines.",
+    name: "Sanjay T.",
+    role: "GitHub Workshop Attendee",
+    initial: "S",
+  },
+  {
+    quote: "Understood serverless hosting, API integrations, and prompt tuning within a single weekend. The study jam was structured, clear, and highly engaging.",
+    name: "Meera N.",
+    role: "Google Cloud Jam Participant",
+    initial: "M",
+  }
 ]
 
 export default function TestimonialsSection() {
@@ -73,15 +97,15 @@ export default function TestimonialsSection() {
           </div>
         </motion.div>
 
-        {/* Remaining 3 */}
-        <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+        {/* Remaining Testimonials Grid */}
+        <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
           {testimonials.slice(1).map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.7 }}
+              transition={{ delay: i * 0.05, duration: 0.7 }}
               whileHover={{ y: -6, borderColor: 'rgba(255,212,0,0.2)' }}
               style={{
                 background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
