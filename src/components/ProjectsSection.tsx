@@ -8,7 +8,7 @@ const products = [
     tech: ['React', 'NLP', 'Full Stack'],
     live: 'https://pickup-law-agent.vercel.app/',
     github: null,
-    image: '/law.png',
+    image: '/law.webp',
   },
   {
     title: 'Agent K',
@@ -17,7 +17,7 @@ const products = [
     tech: ['React', 'Python', 'Full Stack'],
     live: 'https://agent02.vercel.app/',
     github: null,
-    image: '/Agentk.png',
+    image: '/Agentk.webp',
   },
   {
     title: 'AI HR Management System',
@@ -26,7 +26,7 @@ const products = [
     tech: ['Python', 'Machine Learning', 'Full Stack'],
     live: null,
     github: 'https://github.com/Mani-02nev/HRMS',
-    image: '/hrms.png',
+    image: '/hrms.webp',
   },
   {
     title: 'KS AI Resume Builder',
@@ -35,7 +35,7 @@ const products = [
     tech: ['React', 'AI', 'Full Stack'],
     live: 'https://kscv.vercel.app/',
     github: null,
-    image: '/ks.png',
+    image: '/ks.webp',
   },
   {
     title: 'AI Sales Intelligence',
@@ -44,7 +44,7 @@ const products = [
     tech: ['Python', 'Data Analytics', 'Full Stack'],
     live: null,
     github: 'https://github.com/Mani-02nev/Ai-Sales-Inteligence',
-    image: '/ai_sales.png',
+    image: '/ai_sales.webp',
   },
 ]
 

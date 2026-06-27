@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# AI / LLM Crawlers — full access for ChatGPT, Claude, Perplexity, etc.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
+Sitemap: https://mr-k02.vercel.app/sitemap.xml
+
+# LLM Knowledge Base
+# https://mr-k02.vercel.app/llms.txt

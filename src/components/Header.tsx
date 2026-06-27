@@ -54,7 +54,7 @@ export default function Header() {
         {/* Logo */}
         <NavLink to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
           <motion.img
-            src="/logo.png"
+            src="/logo.webp"
             alt="Mr K Logo"
             whileHover={{ scale: 1.05 }}
             style={{ height: '42px', width: 'auto', objectFit: 'contain' }}

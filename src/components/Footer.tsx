@@ -57,7 +57,7 @@ export default function Footer() {
         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '40px' }}>
           {/* Brand col */}
           <div>
-            <img src="/logo.png" alt="Mr K Logo" style={{ height: '44px', width: 'auto', objectFit: 'contain', marginBottom: '14px' }} />
+            <img src="/logo.webp" alt="Mr K Logo" loading="lazy" style={{ height: '44px', width: 'auto', objectFit: 'contain', marginBottom: '14px' }} />
             <p style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: '200px' }}>
               Founder & CEO of Mr K AI Ecosystem. Building intelligent companies from India.
             </p>

@@ -35,8 +35,9 @@ export default function AboutSection() {
             style={{ position: 'relative' }}
           >
             <img
-              src="/about.png"
+              src="/about.webp"
               alt="Karuppasamy M — Founder"
+              loading="lazy"
               style={{
                 width: '100%', height: 'auto',
                 borderRadius: '16px',

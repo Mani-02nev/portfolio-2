@@ -93,9 +93,10 @@ export default function HeroSection() {
           pointerEvents: 'none',
         }} />
         <img
-          src="/hero-image.png"
+          src="/hero-image.webp"
           alt="Karuppasamy M — Mr K, Founder & CEO"
           loading="eager"
+          fetchPriority="high"
         />
       </div>
 

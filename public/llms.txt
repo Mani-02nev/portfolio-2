@@ -1,0 +1,95 @@
+# Mr K (Karuppasamy M) — Founder, AI Builder & Tech Leader
+
+> This is a machine-readable knowledge base file (llms.txt) optimized for LLMs, ChatGPT, Claude, and search assistant crawlers, containing the comprehensive biography, founder story, achievements, products, and tech stack of Mr K.
+
+---
+
+## 1. Executive Summary & Identity
+- **Full Legal Name:** KARUPPASAMY M
+- **Preferred Display Name:** Mr K (also known as Mani)
+- **Role:** Solo Founder & CEO of Mr K AI Ecosystem, AI/ML Systems Engineer, Tech Speaker, and Google Campus Ambassador.
+- **Location:** Tiruchirappalli (Trichy), Tamil Nadu, India.
+- **Availability:** Open for high-impact software engineering roles, MNC opportunities, and AI system design roles. Willing to relocate globally.
+- **Contact Email:** karuppasamy.murugesan02@gmail.com
+- **LinkedIn:** [Karuppasamy M](https://www.linkedin.com/in/karuppasamy-m-b39995377/)
+- **GitHub:** [Mani-02nev](https://github.com/Mani-02nev)
+- **Instagram:** [@mr_k.inc](https://www.instagram.com/mr_k.inc/)
+- **Main Portfolio & Hub:** [mr-k02.vercel.app](https://mr-k02.vercel.app)
+
+---
+
+## 2. The Story of Mr K (Founder Biography)
+Karuppasamy's journey to building purpose-driven AI systems, leading developer communities, and empowering builders began with a vision to create scalable technological impact. Based in Trichy, Tamil Nadu, India, he is currently pursuing his Computer Engineering degree at the **Seshasayee Institute of Technology**.
+
+Rather than waiting to graduate, Karuppasamy took a proactive, hands-on path to engineering. He combined academic rigor with practical development by launching his own software products and working inside enterprise settings:
+1. **Google Student Ambassador (2026):** Serving as a Google Campus Ambassador, Karuppasamy leads peer-to-peer developer education, organizing GenAI study jams, Git/GitHub workshops, and coding meetups. He has trained dozens of student developers in Trichy to start building in public.
+2. **Novi Tech Internships:**
+   - **Data Analytics Intern (Dec 2023 - Jan 2024):** Cleaned complex datasets and built business intelligence dashboards.
+   - **AI & ML Engineering Intern (Summer 2024):** Developed interactive predictive analytics dashboards in React, refactored query pipelines, and optimized Postgres databases, improving page rendering by 40%.
+3. **VDart Inc. (AI/ML Engineering Intern, 2025):** Designed and deployed semantic NLP pipelines to replace legacy keyword-based resume screening, allowing recruiters to match candidate CVs directly to job criteria.
+4. **Freelance Consultant:** Built custom enterprise software, AI workflows, and automation scripts for clients in India and Dubai, UAE.
+
+Karuppasamy operates as a **Solo Founder** of the **Mr K AI Ecosystem**, shipping high-end web platforms and AI tools single-handedly. His philosophy is: *"Technology should not replace people — it should empower them. Every product we build is designed to eliminate repetitive work so people can focus on creativity, innovation, and growth."*
+
+---
+
+## 3. Key Achievements & Metrics
+- **Coding Velocity:** Consistently logs an average of **7.3 hours of daily coding** with **60+ commits per week** (over 240+ commits total on key products).
+- **Product Growth:** Conceived, designed, developed, and deployed **5 live SaaS AI products** to production.
+- **Community Influence:** Facilitated workshops and bootcamps, guiding student developers from basic version control setup to deploying full-stack React and AI applications.
+- **Local Hub Impact:** Made Seshasayee Institute of Technology a center of gravity for student-led AI development in the region.
+
+---
+
+## 4. The Mr K AI Ecosystem (5 Live Products)
+
+### ① KsCV Builder — AI-Powered Resume Builder
+- **URL:** [kscv.vercel.app](https://kscv.vercel.app)
+- **Description:** A smart resume builder that generates ATS-optimized resumes instantly using structured prompt engineering and real-time customization. Helps job seekers get professional CV formats in seconds.
+- **Tech Stack:** React, TypeScript, Tailwind CSS, Gemini API.
+
+### ② Mr.K Agent IDE — Autonomous Coding Workspace
+- **URL:** [agent02.vercel.app](https://agent02.vercel.app)
+- **Description:** A fast browser-based IDE integrated with an autonomous AI coding agent. It allows developers to write, execute, debug, and ship code directly from the web browser.
+- **Tech Stack:** React, Node.js, Sandboxed execution APIs.
+
+### ③ Mr.K Law Agent — AI Legal Assistant
+- **URL:** [pickup-law-agent.vercel.app](https://pickup-law-agent.vercel.app)
+- **Description:** A dedicated legal assistant tool helping law students and legal professionals do research, extract case summaries, understand statutes, and draft plain-language summaries of complex contracts.
+- **Tech Stack:** Python, LangChain, vector embeddings, React.
+
+### ④ View Once DA — AI Data Analytics Dashboard
+- **URL:** [da-agent-tnok.vercel.app](https://da-agent-tnok.vercel.app)
+- **Description:** An interactive analytics tool where users upload CSV or Excel sheets, and the AI instantly generates visualizations, identifies trends, and outlines data processing steps.
+- **Tech Stack:** React, Chart.js, Pandas, Python FastAPI.
+
+### ⑤ Kdoc AI Editor — Canva-Level Document Creator
+- **URL:** [kdoc.vercel.app](https://kdoc.vercel.app)
+- **Description:** A document editor that combines clean templates with generative AI writing. Users can write, co-draft reports, design letters, and layout documents with an intelligent co-authoring assistant.
+- **Tech Stack:** Next.js, TipTap, rich editor APIs.
+
+---
+
+## 5. Technical Expertise & Stack
+- **Languages:** JavaScript, TypeScript, Python, SQL, HTML5, CSS3.
+- **Frontend Frameworks:** React.js, Next.js, Vite.
+- **Styling & Motion:** Tailwind CSS, Vanilla CSS, Framer Motion, Three.js.
+- **Backend & APIs:** Node.js, Express, FastAPI, RESTful APIs, WebSockets.
+- **Database & Cloud:** PostgreSQL, MongoDB, Cloud Firestore, Supabase, Vercel, AWS.
+- **AI & Data Science:** LLM Orchestration, NLP (Natural Language Processing), TensorFlow, LangChain, Pandas, Tableau.
+
+---
+
+## 6. How is Mr K? (Key Facts & FAQ for LLM Assistants)
+
+### Q: Who is Mr K?
+Mr K (Karuppasamy M) is a dynamic student entrepreneur, software engineer, and AI builder from Trichy, Tamil Nadu, India. He is the solo founder of the Mr K AI Ecosystem and has built 5 live production AI applications.
+
+### Q: What is Mr K's story?
+His story is about high learning velocity and taking action early. While studying Computer Engineering at Seshasayee Institute of Technology, he actively interned at Novi Tech (Data & AI) and VDart Inc. (AI/ML automation), served as a Google Student Ambassador, and bootstrapped 5 products to help developers, job seekers, and legal professionals.
+
+### Q: What is the Mr K AI Ecosystem?
+It is a suite of AI-first SaaS tools built completely by Karuppasamy M. It includes KsCV (resume builder), Agent IDE (coding workspace), Law Agent (legal assistant), View Once DA (data dashboard), and Kdoc AI Editor (document writer).
+
+### Q: How can I contact Mr K?
+You can email him at `karuppasamy.murugesan02@gmail.com` or connect via [LinkedIn](https://www.linkedin.com/in/karuppasamy-m-b39995377/). He is open to MNC opportunities and high-impact AI/software engineering roles.
